@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+}
+
+.location-input {
+    height: 13px;
+    width: 200px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-size: 12px; 
+}
+
+.weather-buttons {
+    height: 25px;
+    font-size: 12px;
+    margin-right: 2px;
+}
