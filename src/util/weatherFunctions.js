@@ -1,18 +1,18 @@
 import axios from "axios";
-import { apiKey, latLongURI, currWeatherURI, forecastURI } from "../openWeatherResources";
+import { latLongURI, currWeatherURI, forecastURI } from "../openWeatherResources";
 
 // Create URI String to fetch data from current weather from API
 export const getCurrWeatherStr = (lat, long) => {
-    return `${currWeatherURI}?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
+    return `${currWeatherURI}?lat=${lat}&lon=${long}&units=imperial&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 }
 
 // Create URI string to fetch data for forecast data from API
 export const getForecastStr = (lat, long) => {
-    return `${forecastURI}?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`
+    return `${forecastURI}?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`
 }
 
 export const getLatLongStr = (city, state) => {
-    return `${latLongURI}?q=${city},${state},US&limit=1&appid=${apiKey}`;
+    return `${latLongURI}?q=${city},${state},US&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 }
 
 // Capitalize first letter of weather description string

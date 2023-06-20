@@ -74,6 +74,7 @@ export default function Dashboard() {
     setOpen(!open);
   };
 
+  // Get weather data for users current location; includes current weather and forecast
   const getWeatherData = () => {
     setLoading(true);
     navigator.geolocation.getCurrentPosition(async function (position) {
@@ -104,6 +105,7 @@ export default function Dashboard() {
     }) 
   }
 
+  // Get weather data and forecast for data input by user (city and state)
   const getUserInputWeatherData = async () => {
     const inputCity = document.getElementById("cityInputField").value;
     const inputState = document.getElementById("usaStateInputField").value;
@@ -194,6 +196,7 @@ export default function Dashboard() {
     </Drawer>
   )
 
+  // Icon element for current weather
   const MainIconImage = () => (
     <Avatar
         sx={{ width: 60, height: 60, backgroundColor: "lightblue" }}
@@ -201,6 +204,7 @@ export default function Dashboard() {
     />
   )
 
+  // Current weather in the given location
   const MainWeatherCard = () => (
       <>
         <Container maxWidth="xs" sx={{ display: "flex",  flexDirection: "column", mt: 4, mb: 2 }}>
@@ -209,13 +213,11 @@ export default function Dashboard() {
               <MainIconImage />
               <Typography component="h2" variant="h5" color="primary" marginLeft={3}>{Math.round(weatherData.main.temp)}° F</Typography>
             </Box>
-            {/* <Box display="flex" justifyContent={"center"} alignText="center">
-              <Typography component="h2" variant="h6" color="primary" fontStyle={"italic"} mt={1}>{capitalizeFirstLetter(weatherData.weather[0].description)}</Typography>
-            </Box> */}
       </Container>
     </>
   )
 
+  // Search field for states that autocompletes states
   const SearchField = () => {
     const statesArr = statesWithAbbreviations.map((obj) => {
       return obj.name;
@@ -247,6 +249,7 @@ export default function Dashboard() {
     )
   }
 
+  // Main landing page component
   const DashboardContent = () => (
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />

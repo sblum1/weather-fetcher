@@ -5,13 +5,8 @@ import { CartesianGrid, LineChart, Line, XAxis, YAxis, Label, ResponsiveContaine
 export default function Chart({data}) {
   const theme = useTheme();
 
-  React.useEffect(() => {
-    console.log(data);
-  }, [])
-
   return (
     <React.Fragment>
-      {/* <Title>Today</Title> */}
       <ResponsiveContainer minHeight={450}>
         <LineChart
           data={data}

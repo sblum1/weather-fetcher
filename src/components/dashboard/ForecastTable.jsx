@@ -1,5 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box } from "@mui/material";
 
+// Maps out forecast data into a table 
 export const ForecastTable = ({ forecastData }) => {
   return (
     <>
